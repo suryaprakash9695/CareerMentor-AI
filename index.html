@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerMentor AI - AI-Powered Career Guidance & Placement Prep</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Get personalized career recommendations, learning roadmaps, resume analysis, mock interview preparation, and AI career coaching to shape your future.">
+    <meta name="keywords" content="Career Guidance, AI Career coach, Skill Gap analysis, Roadmap generator, Resume builder, Mock interview, DSA prep">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+    <!-- SVG Definitions for Gradients -->
+    <svg style="width:0; height:0; position:absolute;" aria-hidden="true">
+        <defs>
+            <linearGradient id="accent-grad-svg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366f1" />
+                <stop offset="50%" stop-color="#a855f7" />
+                <stop offset="100%" stop-color="#ec4899" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- ================= LANDING PAGE ================= -->
+    <div id="landing-page">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CareerMentor <span class="gradient-text">AI</span></span>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="landing-theme-toggle" data-tooltip="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="settings-toggle" id="landing-settings-toggle" data-tooltip="API Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="gradient-btn" id="btn-enter-dashboard">
+                    Go to Dashboard <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content" data-aos="fade-right">
+                <h1>Shape Your Future with <br><span class="gradient-text" id="typed-headline">AI Career Guidance</span></h1>
+                <p>Get personalized career recommendations, dynamic learning roadmaps, resume insights, placement prep, and 24/7 AI-powered mentoring to accelerate your career growth.</p>
+                <div class="hero-actions">
+                    <button class="gradient-btn" id="hero-start-assessment">
+                        Start Career Assessment <i class="fa-solid fa-clipboard-question"></i>
+                    </button>
+                    <button class="secondary-btn" id="hero-explore-features">
+                        Explore Features <i class="fa-solid fa-compass"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="visual-container"></div>
+                <img src="https://img.icons8.com/3d-fluency/375/robot-assistant.png" alt="AI Mentor illustration" class="hero-illustration" onerror="this.src='https://illustrations.popsy.co/white/creative-work.svg'">
+                <div class="floating-tech-icons">
+                    <div class="tech-icon-bubble"><i class="fa-solid fa-code"></i></div>
+                    <div class="tech-icon-bubble"><i class="fa-solid fa-brain"></i></div>
+                    <div class="tech-icon-bubble"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="tech-icon-bubble"><i class="fa-solid fa-laptop-code"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card glass-panel" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-number gradient-text" data-val="500">0</div>
+                <div class="stat-label">500+ Career Paths</div>
+            </div>
+            <div class="stat-card glass-panel" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-number gradient-text" data-val="1000">0</div>
+                <div class="stat-label">1000+ Skills Evaluated</div>
+            </div>
+            <div class="stat-card glass-panel" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-number gradient-text" data-val="2000">0</div>
+                <div class="stat-label">2000+ Mock Q&As</div>
+            </div>
+            <div class="stat-card glass-panel" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-number gradient-text" data-val="100">0</div>
+                <div class="stat-label">100+ Learning Roadmaps</div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase -->
+        <section class="features-section" id="features-section">
+            <div class="section-header" data-aos="fade-up">
+                <h2>AI-Powered Core Modules</h2>
+                <p>An ecosystem of deep learning tools and interactive mentors to guide you at every step of your educational and professional journey.</p>
+            </div>
+            <div class="features-grid">
+                <!-- Recommendations -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-module="assessment">
+                    <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
+                    <h3>Career Recommendation</h3>
+                    <p>Discover roles customized to your interests, academics, and technical profiles with match scores.</p>
+                    <span class="feature-link">Open assessment <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Skill Gap -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="100" data-module="skill-gap">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Skill Gap Analysis</h3>
+                    <p>Identify missing critical competencies and priority targets for your dream career path.</p>
+                    <span class="feature-link">Analyze gaps <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Roadmap -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="200" data-module="roadmap">
+                    <div class="feature-icon"><i class="fa-solid fa-road"></i></div>
+                    <h3>Learning Roadmap</h3>
+                    <p>Interactive step-by-step roadmap from foundations through deployment and placement prep.</p>
+                    <span class="feature-link">Generate roadmap <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Resume Analyzer -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-module="resume-analyzer">
+                    <div class="feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h3>Resume Analyzer</h3>
+                    <p>Get instant ATS scores, spelling/formatting tips, keyword checks, and upgrade pathways.</p>
+                    <span class="feature-link">Scan resume <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Resume Builder -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="100" data-module="resume-builder">
+                    <div class="feature-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <h3>Resume Builder</h3>
+                    <p>Create professional, print-ready standard resumes with interactive templates.</p>
+                    <span class="feature-link">Build now <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Interview Prep -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="200" data-module="interview-prep">
+                    <div class="feature-icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <h3>Interview Preparation</h3>
+                    <p>Master technical, HR, behavioral, situational, and scenario interview topics.</p>
+                    <span class="feature-link">Explore Q&As <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Project Recommendations -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-module="projects">
+                    <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Project Suggestions</h3>
+                    <p>Get beginner, intermediate, and advanced project prompts matched to your tech stack.</p>
+                    <span class="feature-link">View projects <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Salary Insights -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="100" data-module="salary">
+                    <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <h3>Salary Insights</h3>
+                    <p>Examine average pay scales for freshers through senior roles, top industries, and geographies.</p>
+                    <span class="feature-link">Explore pay <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Career Comparison -->
+                <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="200" data-module="comparison">
+                    <div class="feature-icon"><i class="fa-solid fa-code-compare"></i></div>
+                    <h3>Career Comparison</h3>
+                    <p>Compare salaries, demand indicators, learning curves, and growth side-by-side.</p>
+                    <span class="feature-link">Compare paths <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= DASHBOARD PAGE ================= -->
+    <div id="dashboard-page" style="display:none;">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>CareerMentor <span class="gradient-text">AI</span></span>
+                </div>
+                <button class="menu-toggle" id="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-view="dashboard-home">
+                    <a href="#home"><i class="fa-solid fa-house"></i> Overview Dashboard</a>
+                </li>
+                <li class="sidebar-item" data-view="assessment">
+                    <a href="#assessment"><i class="fa-solid fa-clipboard-question"></i> Career Assessment</a>
+                </li>
+                <li class="sidebar-item" data-view="recommendations">
+                    <a href="#recommendations"><i class="fa-solid fa-compass"></i> Career Recommendations</a>
+                </li>
+                <li class="sidebar-item" data-view="skill-gap">
+                    <a href="#skill-gap"><i class="fa-solid fa-chart-pie"></i> Skill Gap Analysis</a>
+                </li>
+                <li class="sidebar-item" data-view="roadmap">
+                    <a href="#roadmap"><i class="fa-solid fa-road"></i> Learning Roadmap</a>
+                </li>
+                <li class="sidebar-item" data-view="projects">
+                    <a href="#projects"><i class="fa-solid fa-lightbulb"></i> Project Recommendations</a>
+                </li>
+                <li class="sidebar-item" data-view="resume-analyzer">
+                    <a href="#resume-analyzer"><i class="fa-solid fa-file-invoice"></i> Resume Analyzer</a>
+                </li>
+                <li class="sidebar-item" data-view="resume-builder">
+                    <a href="#resume-builder"><i class="fa-solid fa-id-card"></i> Resume Builder</a>
+                </li>
+                <li class="sidebar-item" data-view="interview-prep">
+                    <a href="#interview-prep"><i class="fa-solid fa-circle-question"></i> Interview Prep Hub</a>
+                </li>
+                <li class="sidebar-item" data-view="mock-interview">
+                    <a href="#mock-interview"><i class="fa-solid fa-user-tie"></i> Mock Simulator</a>
+                </li>
+                <li class="sidebar-item" data-view="dsa-prep">
+                    <a href="#dsa-prep"><i class="fa-solid fa-laptop-code"></i> DSA Prep Center</a>
+                </li>
+                <li class="sidebar-item" data-view="comparison">
+                    <a href="#comparison"><i class="fa-solid fa-code-compare"></i> Career Comparison</a>
+                </li>
+                <li class="sidebar-item" data-view="salary">
+                    <a href="#salary"><i class="fa-solid fa-sack-dollar"></i> Salary Insights</a>
+                </li>
+                <li class="sidebar-item" data-view="trends">
+                    <a href="#trends"><i class="fa-solid fa-arrow-trend-up"></i> Industry Trends</a>
+                </li>
+                <li class="sidebar-item" data-view="certifications">
+                    <a href="#certifications"><i class="fa-solid fa-certificate"></i> Certifications</a>
+                </li>
+                <li class="sidebar-item" data-view="productivity">
+                    <a href="#productivity"><i class="fa-solid fa-stopwatch"></i> Productivity Center</a>
+                </li>
+                <li class="sidebar-item" data-view="coach-chat">
+                    <a href="#coach"><i class="fa-solid fa-comments"></i> AI Career Coach</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button class="secondary-btn" id="btn-generate-report" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-file-pdf"></i> Export Career PDF
+                </button>
+                <button class="secondary-btn" id="btn-leave-dashboard" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-right-from-bracket"></i> Landing Page
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Controls -->
+            <header class="top-header">
+                <div class="header-title">
+                    <button class="menu-toggle" id="sidebar-open-btn" style="margin-right: 15px;"><i class="fa-solid fa-bars"></i></button>
+                    <h2 id="current-view-title">Overview Dashboard</h2>
+                    <p id="current-view-desc">Monitor your professional advancement and explore options.</p>
+                </div>
+                <div class="header-controls">
+                    <button class="theme-toggle" id="dashboard-theme-toggle" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="settings-toggle" id="dashboard-settings-toggle" data-tooltip="Configure API">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ================= MODULE: DASHBOARD HOME (OVERVIEW) ================= -->
+            <section id="view-dashboard-home" class="dashboard-module active">
+                <div class="overview-grid">
+                    <div class="overview-main">
+                        <!-- Welcome profile status -->
+                        <div class="profile-card glass-panel">
+                            <div class="profile-welcome">
+                                <h3>Welcome Back, <span class="gradient-text" id="overview-user-name">Guest Explorer</span>!</h3>
+                                <p>Complete your Career Assessment to unlock recommendations, gap charts, roadmap builders, and customized projects.</p>
+                            </div>
+                            <div class="profile-meta-grid">
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <div>
+                                        <span class="meta-label">Branch</span>
+                                        <span class="meta-val" id="overview-branch">Not Set</span>
+                                    </div>
+                                </div>
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                    <div>
+                                        <span class="meta-label">Goal Target</span>
+                                        <span class="meta-val" id="overview-goal">Not Set</span>
+                                    </div>
+                                </div>
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-award"></i>
+                                    <div>
+                                        <span class="meta-label">Readiness</span>
+                                        <span class="meta-val" id="overview-readiness">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Grid -->
+                        <div class="module-selector-grid">
+                            <div class="module-card glass-panel" data-go-to="assessment">
+                                <i class="fa-solid fa-clipboard-question"></i>
+                                <h4>Assess Profile</h4>
+                            </div>
+                            <div class="module-card glass-panel" data-go-to="recommendations">
+                                <i class="fa-solid fa-compass"></i>
+                                <h4>AI Careers</h4>
+                            </div>
+                            <div class="module-card glass-panel" data-go-to="roadmap">
+                                <i class="fa-solid fa-road"></i>
+                                <h4>Learning Roadmaps</h4>
+                            </div>
+                            <div class="module-card glass-panel" data-go-to="mock-interview">
+                                <i class="fa-solid fa-user-tie"></i>
+                                <h4>Mock Interview</h4>
+                            </div>
+                            <div class="module-card glass-panel" data-go-to="resume-analyzer">
+                                <i class="fa-solid fa-file-invoice"></i>
+                                <h4>Analyze Resume</h4>
+                            </div>
+                            <div class="module-card glass-panel" data-go-to="productivity">
+                                <i class="fa-solid fa-stopwatch"></i>
+                                <h4>Track Focus</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coach Panel & Countdown -->
+                    <div class="overview-side">
+                        <div class="quick-coach-card glass-panel">
+                            <h3><i class="fa-solid fa-brain"></i> AI Coach Guidance</h3>
+                            <div class="chat-bubble-preview">
+                                "Hi there! I can help build custom roadmaps, review resumes, or rehearse placement interviews. Complete your assessment form to get fully tailored strategies!"
+                            </div>
+                            <button class="gradient-btn quick-coach-btn" data-go-to="coach-chat">
+                                Ask Coach <i class="fa-solid fa-comments"></i>
+                            </button>
+                        </div>
+
+                        <div class="quick-coach-card glass-panel text-center">
+                            <h3><i class="fa-solid fa-hourglass-half"></i> Placement Countdown</h3>
+                            <div class="countdown-timer-wrap">
+                                <div class="countdown-item">
+                                    <span class="countdown-val" id="cd-days">00</span>
+                                    <span class="countdown-lbl">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-val" id="cd-hours">00</span>
+                                    <span class="countdown-lbl">Hours</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-val" id="cd-mins">00</span>
+                                    <span class="countdown-lbl">Mins</span>
+                                </div>
+                            </div>
+                            <button class="secondary-btn" style="width: 100%; justify-content: center;" data-go-to="productivity">
+                                Adjust Date
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 1: CAREER ASSESSMENT MODULE ================= -->
+            <section id="view-assessment" class="dashboard-module">
+                <form id="assessment-form" class="glass-panel" style="padding: 2.5rem;">
+                    <!-- Personal -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i class="fa-solid fa-user"></i> Personal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="as-name">Full Name</label>
+                                <input type="text" id="as-name" placeholder="John Doe" required value="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-age">Age</label>
+                                <input type="number" id="as-age" placeholder="21" required value="21">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-education">Education Level</label>
+                                <select id="as-education">
+                                    <option value="B.Tech" selected>B.Tech</option>
+                                    <option value="B.E">B.E</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="M.Tech">M.Tech</option>
+                                    <option value="B.Sc">B.Sc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="as-college">College Name</label>
+                                <input type="text" id="as-college" placeholder="IIT Delhi" value="National Institute of Technology">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-branch">Branch / Specialization</label>
+                                <input type="text" id="as-branch" placeholder="Computer Science" value="Computer Science & Engineering">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-gradyear">Graduation Year</label>
+                                <input type="number" id="as-gradyear" placeholder="2027" value="2027">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i class="fa-solid fa-book"></i> Academic Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="as-cgpa">Current CGPA / Percentage</label>
+                                <input type="text" id="as-cgpa" placeholder="8.5" value="8.4">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-fav-subjects">Favorite Subjects</label>
+                                <input type="text" id="as-fav-subjects" placeholder="DBMS, Algorithms" value="Data Structures, Database Management">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="as-strong-subjects">Strong Academic Subjects</label>
+                                <input type="text" id="as-strong-subjects" placeholder="OS, Networks" value="Object Oriented Programming, SQL">
+                            </div>
+                            <div class="form-group">
+                                <label for="as-weak-subjects">Weak Academic Subjects</label>
+                                <input type="text" id="as-weak-subjects" placeholder="Theory of Computation" value="Computer Networks, Physics">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills (Chips) -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i class="fa-solid fa-gears"></i> Technical Skills</h3>
+                        <label style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom: 8px; display:block;">Select all tools and technologies you are familiar with:</label>
+                        <div class="chips-container" id="as-skills-chips">
+                            <!-- Skill chips populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Interests (Chips) -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i class="fa-solid fa-heart"></i> Personal Interests</h3>
+                        <label style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom: 8px; display:block;">Select areas that excite you:</label>
+                        <div class="chips-container" id="as-interests-chips">
+                            <!-- Interest chips populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Career Goal -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i class="fa-solid fa-bullseye"></i> Desired Career Goal</h3>
+                        <div class="form-grid" style="grid-template-columns: 1fr;">
+                            <div class="form-group">
+                                <label for="as-goal">Select Career Target</label>
+                                <select id="as-goal">
+                                    <option value="Software Engineer">Software Engineer</option>
+                                    <option value="Full Stack Developer" selected>Full Stack Developer</option>
+                                    <option value="Frontend Developer">Frontend Developer</option>
+                                    <option value="Backend Developer">Backend Developer</option>
+                                    <option value="Java Developer">Java Developer</option>
+                                    <option value="Python Developer">Python Developer</option>
+                                    <option value="AI Engineer">AI Engineer</option>
+                                    <option value="Data Scientist">Data Scientist</option>
+                                    <option value="Cyber Security Analyst">Cyber Security Analyst</option>
+                                    <option value="DevOps Engineer">DevOps Engineer</option>
+                                    <option value="Cloud Engineer">Cloud Engineer</option>
+                                    <option value="Product Manager">Product Manager</option>
+                                    <option value="UI/UX Designer">UI/UX Designer</option>
+                                    <option value="Entrepreneur">Entrepreneur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="action-bar">
+                        <button type="reset" class="secondary-btn"><i class="fa-solid fa-rotate-left"></i> Reset Form</button>
+                        <button type="submit" class="gradient-btn" id="btn-submit-assessment"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI Analysis</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ================= MODULE 2: CAREER RECOMMENDATIONS ================= -->
+            <section id="view-recommendations" class="dashboard-module">
+                <div class="recommendations-wrapper" id="recommendations-container">
+                    <div class="glass-panel text-center" style="padding:4rem 2rem;">
+                        <i class="fa-solid fa-clipboard-question" style="font-size:3rem; margin-bottom:1.5rem; color:var(--text-muted);"></i>
+                        <h3>Assess profile to unlock AI Recommendations</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:2rem;">Run the assessment tool first to evaluate your academic performance and skills.</p>
+                        <button class="gradient-btn" data-go-to="assessment">Go to Assessment Form</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 3: SKILL GAP ANALYSIS ================= -->
+            <section id="view-skill-gap" class="dashboard-module">
+                <div class="gap-analysis-dashboard" id="skill-gap-container">
+                    <div class="glass-panel text-center" style="padding:4rem 2rem; grid-column: 1 / -1;">
+                        <i class="fa-solid fa-chart-pie" style="font-size:3rem; margin-bottom:1.5rem; color:var(--text-muted);"></i>
+                        <h3>Assess profile to unlock Skill Gap Analysis</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:2rem;">Run the assessment tool to compare your current stack with target criteria.</p>
+                        <button class="gradient-btn" data-go-to="assessment">Go to Assessment Form</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 4: LEARNING ROADMAP GENERATOR ================= -->
+            <section id="view-roadmap" class="dashboard-module">
+                <div id="roadmap-container">
+                    <div class="glass-panel text-center" style="padding:4rem 2rem;">
+                        <i class="fa-solid fa-road" style="font-size:3rem; margin-bottom:1.5rem; color:var(--text-muted);"></i>
+                        <h3>Assess profile to generate Learning Roadmaps</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:2rem;">Your learning milestones will map out chronologically once you complete the assessment.</p>
+                        <button class="gradient-btn" data-go-to="assessment">Go to Assessment Form</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 5: PROJECT RECOMMENDATION ENGINE ================= -->
+            <section id="view-projects" class="dashboard-module">
+                <div class="features-grid" id="projects-container">
+                    <div class="glass-panel text-center" style="padding:4rem 2rem; grid-column: 1 / -1;">
+                        <i class="fa-solid fa-lightbulb" style="font-size:3rem; margin-bottom:1.5rem; color:var(--text-muted);"></i>
+                        <h3>Assess profile to get Project Suggestions</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:2rem;">Get customized, building projects graded by difficulty.</p>
+                        <button class="gradient-btn" data-go-to="assessment">Go to Assessment Form</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 6: RESUME ANALYZER ================= -->
+            <section id="view-resume-analyzer" class="dashboard-module">
+                <div class="overview-grid">
+                    <div class="overview-main">
+                        <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; gap:1.5rem;">
+                            <h3><i class="fa-solid fa-file-invoice"></i> Paste Resume Content</h3>
+                            <p style="color:var(--text-secondary); font-size:0.9rem;">Copy-paste the complete text from your PDF/Word resume below. Our AI analyzer calculates ATS scores, checks keywords, and offers structural recommendations.</p>
+                            <textarea id="resume-text-input" rows="15" placeholder="Paste your resume content here..." style="background:var(--input-bg); border:1px solid var(--card-border); color:var(--text-primary); border-radius:8px; padding:1rem; outline:none; font-family:'JetBrains Mono', monospace; font-size:0.85rem; resize:vertical;"></textarea>
+                            <div style="display:flex; justify-content:flex-end;">
+                                <button class="gradient-btn" id="btn-analyze-resume"><i class="fa-solid fa-magnifying-glass-chart"></i> Analyze Resume</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overview-side">
+                        <!-- Score meter and quick feedback panel -->
+                        <div class="glass-panel readiness-gauge" style="min-height: 300px;">
+                            <h3>ATS Score</h3>
+                            <div class="circular-progress-wrap" style="margin-top:1.5rem;">
+                                <svg class="circular-progress-svg" width="180" height="180">
+                                    <circle class="circular-progress-bg" cx="90" cy="90" r="80" />
+                                    <circle class="circular-progress-bar" id="resume-ats-progress" cx="90" cy="90" r="80" />
+                                </svg>
+                                <div class="circular-progress-text" id="resume-ats-score">0%</div>
+                            </div>
+                            <p style="color:var(--text-secondary); font-size:0.85rem;" id="resume-ats-grade">No analysis run yet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" id="resume-analysis-results" style="margin-top:2rem; padding:2rem; display:none;">
+                    <!-- Result arrays injected here by JS -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 7: RESUME BUILDER ================= -->
+            <section id="view-resume-builder" class="dashboard-module">
+                <div class="resume-split">
+                    <!-- Form input panel -->
+                    <div class="glass-panel" style="padding:2rem;">
+                        <h3 style="margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                            <span>Resume Creator</span>
+                            <button class="secondary-btn" id="btn-prefill-resume" style="padding: 6px 12px; font-size:0.8rem;"><i class="fa-solid fa-copy"></i> Auto Prefill</button>
+                        </h3>
+                        <div class="form-section">
+                            <h4 class="form-section-title"><i class="fa-solid fa-address-book"></i> Contact Details</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="rb-email" value="johndoe@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" id="rb-phone" value="+91 9876543210">
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Github URL</label>
+                                    <input type="url" id="rb-github" value="github.com/johndoe">
+                                </div>
+                                <div class="form-group">
+                                    <label>LinkedIn URL</label>
+                                    <input type="url" id="rb-linkedin" value="linkedin.com/in/johndoe">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="form-section-title"><i class="fa-solid fa-paragraph"></i> Brief Profile / Objective</h4>
+                            <div class="form-group">
+                                <textarea id="rb-profile-desc" rows="3" style="width:100%;">Ambitious Computer Science undergraduate aiming to apply core algorithmic concepts and modern React skills in a challenging Full Stack developer internship.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="form-section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Education</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Degree / Class</label>
+                                    <input type="text" id="rb-edu-degree" value="B.Tech in CSE">
+                                </div>
+                                <div class="form-group">
+                                    <label>College / School</label>
+                                    <input type="text" id="rb-edu-college" value="National Institute of Technology">
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>GPA / Grades</label>
+                                    <input type="text" id="rb-edu-gpa" value="8.4 CGPA">
+                                </div>
+                                <div class="form-group">
+                                    <label>Timeline</label>
+                                    <input type="text" id="rb-edu-timeline" value="2023 - 2027">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="form-section-title"><i class="fa-solid fa-briefcase"></i> Key Projects</h4>
+                            <div class="form-group">
+                                <label>Project 1 Name</label>
+                                <input type="text" id="rb-p1-title" value="CareerMentor AI Guidance Platform">
+                            </div>
+                            <div class="form-group" style="margin-top: 8px;">
+                                <label>Project 1 Summary</label>
+                                <textarea id="rb-p1-desc" rows="2">Created a client-side platform utilizing NLP models to analyze developer skills, build roadmaps, and generate PDF exports.</textarea>
+                            </div>
+                            <div class="form-group" style="margin-top: 8px;">
+                                <label>Project 2 Name</label>
+                                <input type="text" id="rb-p2-title" value="E-Commerce API Service">
+                            </div>
+                            <div class="form-group" style="margin-top: 8px;">
+                                <label>Project 2 Summary</label>
+                                <textarea id="rb-p2-desc" rows="2">Engineered asynchronous Node/Express servers handling authorization, search filters, and checkout mechanisms.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="form-section-title"><i class="fa-solid fa-ribbon"></i> Certifications & Awards</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Certificates (comma separated)</label>
+                                    <input type="text" id="rb-certs" value="AWS Certified Cloud Practitioner, Meta Front-End Developer Certificate">
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Key Accomplishments</label>
+                                    <input type="text" id="rb-achievements" value="1st Rank in Institute Hackathon 2025, 4-Star Coder on CodeChef">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:flex-end;">
+                            <button class="gradient-btn" id="btn-export-resume-pdf"><i class="fa-solid fa-file-pdf"></i> Download Resume PDF</button>
+                        </div>
+                    </div>
+
+                    <!-- Live print-styled Preview pane -->
+                    <div>
+                        <div class="resume-preview-container" id="resume-preview-target">
+                            <!-- Injected and updated in real-time by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 8: INTERVIEW PREPARATION HUB ================= -->
+            <section id="view-interview-prep" class="dashboard-module">
+                <div class="form-section">
+                    <label style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom: 8px; display:block;">Select Category:</label>
+                    <div class="chips-container" id="interview-topics-chips">
+                        <div class="chip-select active" data-topic="Technical">Technical</div>
+                        <div class="chip-select" data-topic="HR">HR / General</div>
+                        <div class="chip-select" data-topic="Behavioral">Behavioral (STAR)</div>
+                        <div class="chip-select" data-topic="Situational">Situational</div>
+                        <div class="chip-select" data-topic="Scenario-Based">Scenario-Based</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel accordion" id="interview-accordion" style="padding:1rem;">
+                    <!-- Items rendered dynamically by JS -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 9: MOCK INTERVIEW SIMULATOR ================= -->
+            <section id="view-mock-interview" class="dashboard-module">
+                <div class="mock-interview-grid">
+                    <!-- Visual feedback wave/mic -->
+                    <div class="glass-panel mock-interview-visualizer">
+                        <h3>Mock AI Simulator</h3>
+                        <div class="interview-waveform">
+                            <div class="waveform-bar"></div>
+                            <div class="waveform-bar"></div>
+                            <div class="waveform-bar"></div>
+                            <div class="waveform-bar"></div>
+                            <div class="waveform-bar"></div>
+                            <div class="waveform-bar"></div>
+                        </div>
+                        <div class="interview-timer" id="mock-timer">00:00</div>
+                        <div style="margin-top:2rem; display:flex; gap:1rem;">
+                            <button class="gradient-btn" id="btn-start-mock"><i class="fa-solid fa-play"></i> Start Session</button>
+                            <button class="secondary-btn" id="btn-stop-mock" disabled><i class="fa-solid fa-stop"></i> End Session</button>
+                        </div>
+                    </div>
+
+                    <!-- Question/Response box -->
+                    <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; gap:1.5rem;">
+                        <h4 style="color:var(--text-muted);">Question Board</h4>
+                        <div style="font-size:1.1rem; min-height:80px; font-weight:600;" id="mock-question-display">
+                            Click 'Start Session' to begin the mock interview with our AI recruiter.
+                        </div>
+                        <div class="form-group" style="flex-grow:1;">
+                            <label for="mock-response-input">Your Answer Response</label>
+                            <textarea id="mock-response-input" rows="8" placeholder="Type your detailed response here..." disabled style="background:var(--input-bg); border:1px solid var(--card-border); color:var(--text-primary); border-radius:10px; padding:12px; outline:none; font-size:0.9rem; resize:none;"></textarea>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:0.8rem; color:var(--text-muted);" id="mock-question-counter">Question 0 of 5</span>
+                            <button class="gradient-btn" id="btn-next-mock-question" disabled>Next Question <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final score report panel -->
+                <div class="glass-panel" id="mock-report-results" style="margin-top:2rem; padding:2rem; display:none;">
+                    <!-- Populated by AI analysis -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 10: DSA PREPARATION CENTER ================= -->
+            <section id="view-dsa-prep" class="dashboard-module">
+                <div class="form-section">
+                    <label style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom: 8px; display:block;">Filter Topic:</label>
+                    <div class="chips-container" id="dsa-topics-chips">
+                        <!-- Loaded dynamically by JS -->
+                    </div>
+                </div>
+
+                <div class="glass-panel accordion" id="dsa-accordion" style="padding:1rem;">
+                    <!-- Loaded dynamically by JS -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 11: CAREER COMPARISON TOOL ================= -->
+            <section id="view-comparison" class="dashboard-module">
+                <div class="glass-panel" style="padding:2rem; margin-bottom:2rem;">
+                    <h3>Compare Career Targets</h3>
+                    <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem;">Select any two roles below to see comparative visual data on salaries, demand curves, and growth potentials.</p>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label>Career Option 1</label>
+                            <select id="comp-career-1">
+                                <option value="Software Engineer" selected>Software Engineer</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                <option value="AI Engineer">AI Engineer</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Cyber Security Analyst">Cyber Security Analyst</option>
+                                <option value="DevOps Engineer">DevOps Engineer</option>
+                                <option value="Cloud Engineer">Cloud Engineer</option>
+                                <option value="UI/UX Designer">UI/UX Designer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Career Option 2</label>
+                            <select id="comp-career-2">
+                                <option value="Software Engineer">Software Engineer</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                <option value="AI Engineer" selected>AI Engineer</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Cyber Security Analyst">Cyber Security Analyst</option>
+                                <option value="DevOps Engineer">DevOps Engineer</option>
+                                <option value="Cloud Engineer">Cloud Engineer</option>
+                                <option value="UI/UX Designer">UI/UX Designer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-grid">
+                    <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <h3>Salary Scale Comparison</h3>
+                        <div style="width:100%; height:300px; position:relative; margin-top:1.5rem;">
+                            <canvas id="comparisonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <h3>Metric Overview</h3>
+                        <div style="width:100%; height:300px; position:relative; margin-top:1.5rem;">
+                            <canvas id="comparisonRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 12: SALARY INSIGHTS DASHBOARD ================= -->
+            <section id="view-salary" class="dashboard-module">
+                <div class="overview-grid" style="grid-template-columns: 2fr 1fr;">
+                    <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <h3>Top Industry Salary Benchmarks</h3>
+                        <div style="width:100%; height:350px; position:relative; margin-top:1.5rem;">
+                            <canvas id="salaryBarChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel" style="padding:2rem; display:flex; flex-direction:column; gap:1.2rem;">
+                        <h3>Salary Demographics</h3>
+                        <div class="profile-meta-item" style="width: 100%;">
+                            <i class="fa-solid fa-circle-arrow-up" style="color:var(--success);"></i>
+                            <div>
+                                <span class="meta-label">Highest Average Growth</span>
+                                <span class="meta-val">AI & Data Engineering (32% YoY)</span>
+                            </div>
+                        </div>
+                        <div class="profile-meta-item" style="width: 100%;">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <div>
+                                <span class="meta-label">Top Geographic Locations</span>
+                                <span class="meta-val">Bengaluru, SF, Seattle, London</span>
+                            </div>
+                        </div>
+                        <div class="profile-meta-item" style="width: 100%;">
+                            <i class="fa-solid fa-arrow-trend-up" style="color:var(--accent);"></i>
+                            <div>
+                                <span class="meta-label">Trending Tech Skills</span>
+                                <span class="meta-val">PyTorch, Next.js, Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 13: INDUSTRY TRENDS ANALYZER ================= -->
+            <section id="view-trends" class="dashboard-module">
+                <div class="features-grid" id="trends-grid-container">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 14: CERTIFICATION RECOMMENDER ================= -->
+            <section id="view-certifications" class="dashboard-module">
+                <div class="features-grid" id="certs-grid-container">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </section>
+
+            <!-- ================= MODULE 15: PRODUCTIVITY CENTER ================= -->
+            <section id="view-productivity" class="dashboard-module">
+                <div class="productivity-board">
+                    <!-- Daily study planner -->
+                    <div class="glass-panel planner-widget">
+                        <h3><i class="fa-solid fa-list-check"></i> Study Planner</h3>
+                        <div style="display:flex; gap:8px; margin-bottom: 1.2rem;">
+                            <input type="text" id="planner-input" placeholder="Add study task..." style="flex-grow:1; background:var(--input-bg); border:1px solid var(--card-border); color:var(--text-primary); border-radius:8px; padding:10px; outline:none; font-size:0.85rem;">
+                            <button class="gradient-btn" id="btn-planner-add" style="padding:10px 14px;"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <ul class="planner-list" id="planner-list-container">
+                            <!-- Items loaded from localstorage -->
+                        </ul>
+                    </div>
+
+                    <!-- Countdown configure -->
+                    <div class="glass-panel countdown-box">
+                        <h3>Placement Deadline</h3>
+                        <div class="countdown-timer-wrap" style="margin-top:1.5rem;">
+                            <div class="countdown-item">
+                                <span class="countdown-val" id="prod-cd-days">00</span>
+                                <span class="countdown-lbl">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-val" id="prod-cd-hours">00</span>
+                                <span class="countdown-lbl">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-val" id="prod-cd-mins">00</span>
+                                <span class="countdown-lbl">Mins</span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:1rem; text-align:left;">
+                            <label>Target Placement Date</label>
+                            <input type="date" id="prod-date-picker">
+                        </div>
+                    </div>
+
+                    <!-- Focus pomodoro -->
+                    <div class="glass-panel focus-tracker-box">
+                        <h3>Focus Timer (Pomodoro)</h3>
+                        <div class="focus-time-display" id="pomodoro-timer">25:00</div>
+                        <div style="display:flex; justify-content:center; gap:8px;">
+                            <button class="gradient-btn" id="btn-pomo-start"><i class="fa-solid fa-play"></i> Start</button>
+                            <button class="secondary-btn" id="btn-pomo-pause"><i class="fa-solid fa-pause"></i> Pause</button>
+                            <button class="secondary-btn" id="btn-pomo-reset" style="color:var(--danger); border-color:rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-rotate-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= MODULE 16: AI CAREER COACH CHATBOT ================= -->
+            <section id="view-coach-chat" class="dashboard-module">
+                <div class="glass-panel chatbot-container">
+                    <div class="chat-history" id="chat-messages-container">
+                        <!-- Bot intro -->
+                        <div class="chat-message assistant">
+                            <div class="chat-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="chat-bubble">
+                                <strong>Career Coach AI</strong>
+                                <p>Welcome! I'm your private AI Career Coach, powered by Groq. Ask me anything about placement strategies, project advice, resume updates, or domain choices.</p>
+                                <div class="chat-actions">
+                                    <span>Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prompt suggestions -->
+                    <div class="chips-container" style="padding: 10px 1.5rem 0 1.5rem; background: transparent;" id="chat-suggestions">
+                        <div class="chip-select" data-prompt="What are the best portfolio project ideas for a Full Stack engineer?">Full-stack projects?</div>
+                        <div class="chip-select" data-prompt="How should I describe machine learning projects on my resume?">ML resume tips?</div>
+                        <div class="chip-select" data-prompt="Can you give me a placement checklist for DSA topics?">DSA prep checklist?</div>
+                        <div class="chip-select" data-prompt="What technical questions are asked in a Node.js developer interview?">Node.js questions?</div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-user-input" placeholder="Ask your coach anything...">
+                        <button class="gradient-btn" id="btn-chat-send" style="padding:14px 20px;"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= CONFIG MODAL: GROQ API KEY ================= -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-box glass-panel">
+            <button class="modal-close" id="btn-modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="gradient-text"><i class="fa-solid fa-gear"></i> Groq API Configuration</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">Your API key is stored locally in your browser's memory and is never transmitted to any external backend except Groq.</p>
+            <div class="form-group">
+                <label for="settings-api-key">Groq API Key</label>
+                <input type="password" id="settings-api-key" placeholder="gsk_...">
+            </div>
+            <div class="form-group">
+                <label>Mock Mode</label>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <input type="checkbox" id="settings-mock-mode" checked style="width:auto;">
+                    <span style="font-size:0.85rem; color:var(--text-secondary);">Use offline pre-compiled simulations (Recommended if key is unavailable)</span>
+                </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:10px; margin-top:1rem;">
+                <button class="secondary-btn" id="btn-api-test" style="flex-grow:1; justify-content:center;"><i class="fa-solid fa-plug"></i> Test Connection</button>
+                <button class="gradient-btn" id="btn-api-save" style="flex-grow:1; justify-content:center;"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container"></div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
